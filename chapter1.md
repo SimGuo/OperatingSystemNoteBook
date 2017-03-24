@@ -1,4 +1,5 @@
 ###Buzz words
+
 ```Synchronization（同步 ）```   ```Race Condition（竞争条件）```  ```Data race（数据竞争）```  ```Mutual exclusion（互斥现象）```   ```Critical section/region（临界区）```  ```Atomic operation（原子操作）```
 
 ---
@@ -7,7 +8,7 @@
 - 现代操作系统设计的要点是多进程/线程
 - 同步很重要
 
-  ```
+```
 举个例子，如果你和你的另一半分别从银行取1000，取钱的步骤包括
       查询余额，取钱扣钱，更新余额。
 那你们可能差不多先都查询到了余额为10000，
