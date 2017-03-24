@@ -24,6 +24,8 @@
 
 **对共享数据的访问是需要同步的**  
 分析这个问题时，首先分析有哪些共享的数据。（老师的课件里面的例子中有粉笔和计数器）
+![回忆进程地址空间（图来自网上）](http://upload-images.jianshu.io/upload_images/4984976-c13ceb7c67f8f4b7.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
+
 
 * 什么情况下数据会被共享？
   * 局部变量是不会被共享的，它是私有的。
@@ -32,8 +34,6 @@
     > 因为它们都存储在可执行文件的数据段\(data segment\)中
   * 堆上的数据和一些动态对象是被共享的
     > 虽然每个线程有自己的栈，但这些栈是在进程的栈空间中划出来的。这些栈对线程是私有的，但进程的堆空间是共享的。可以通过指向堆的指针访问。一般这些指针与`new`和`delete`有关。
-
-![回忆进程地址空间（图来自网上）](http://upload-images.jianshu.io/upload_images/4984976-c13ceb7c67f8f4b7.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
 
 * 如何判断是否会发生data races？
   * 假设只有读和写是原子的。（**有的架构连这一点都做不到**）
