@@ -31,7 +31,7 @@
  - 堆上的数据和一些动态对象是被共享的
   >虽然每个线程有自己的栈，但这些栈是在进程的栈空间中划出来的。这些栈对线程是私有的，但进程的堆空间是共享的。可以通过指向堆的指针访问。一般这些指针与```new```和```delete```有关。
 
-![回忆进程地址空间（图来自网上）](http://upload-images.jianshu.io/upload_images/4984976-c13ceb7c67f8f4b7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+     ![回忆进程地址空间（图来自网上）](http://upload-images.jianshu.io/upload_images/4984976-c13ceb7c67f8f4b7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 - 如何判断是否会发生data races？
  - 假设只有读和写是原子的。（**有的架构连这一点都做不到**）
