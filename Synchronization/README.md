@@ -25,7 +25,9 @@
 **对共享数据的访问是需要同步的**  
 分析这个问题时，首先分析有哪些共享的数据。（老师的课件里面的例子中有粉笔和计数器）
 
-![回忆进程地址空间（图来自网上）](http://upload-images.jianshu.io/upload_images/4984976-c13ceb7c67f8f4b7.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
+```回忆进程地址空间(图来自网上)```
+
+![](http://upload-images.jianshu.io/upload_images/4984976-c13ceb7c67f8f4b7.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
 
 
 * 什么情况下数据会被共享？
