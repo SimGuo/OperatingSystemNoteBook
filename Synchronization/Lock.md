@@ -71,13 +71,13 @@ void release(lock){
 >①记录旧值 ②将值设置为TRUE ③返回旧值
 - 这是由硬件自动实现的
 - Swap/SCHG指令
-```
-void Swap (char* x,* y) { // All done atomically
-      char temp = *x;
-      *x = *y;
-      *y = temp
-}
-```
+      ```
+      void Swap (char* x,* y) { // All done atomically
+            char temp = *x;
+            *x = *y;
+            *y = temp
+      }
+      ```
 - 使用Swap实现test-and-set
      ```
       bool test_and_set (bool *flag) {
