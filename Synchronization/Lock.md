@@ -54,43 +54,39 @@ void release(lock){
  - ```Acquire()```和```Release()```操作必须是原子的。
 
 ---
+---
+
 **那么又该如何实现原子操作呢？**  ——————我们需要硬件的支持：
 
-一些原子的指令（如：test-and-set指令）
+---
+硬件支持（一）：一些原子的指令（如：test-and-set指令）
+      ```
+      bool test_and_set (bool *flag) {
+            bool old = *flag;
+            *flag = TRUE;
+            return old;
+      }
+      ```
+- test-and-set的语义：
+>①记录旧值 ②将值设置为TRUE ③返回旧值
+- 这是由硬件自动实现的
+- Swap/SCHG指令
 ```
-   bool test_and_set (bool *flag) {
-      bool old = *flag;
-      *flag = TRUE;
-      return old;
-   }
+void Swap (char* x,* y) { // All done atomically
+      char temp = *x;
+      *x = *y;
+      *y = temp
+}
 ```
-  - test-and-set的语义：
-  >①记录旧值
-  >②将值设置为TRUE
-  >③返回旧值
-  
-  - 对应的代码（硬件原子地完成如下的工作）：
-   
-  
-  - 这是由硬件自动实现的
-  - Swap/SCHG指令
-    ```
-    void Swap (char* x,* y) { // All done atomically
-        char temp = *x;
-        *x = *y;
-        *y = temp
-    }
-    ```
-  
-  - 使用Swap实现test-and-set
-    ```
-     bool test_and_set (bool *flag) {
+- 使用Swap实现test-and-set
+     ```
+      bool test_and_set (bool *flag) {
       bool X = TRUE;
       Swap(&X, &flag);
       return X;
-    }
-   ```
-
+      }
+     ```
+---
 
 开关中断
   - 对应代码：
