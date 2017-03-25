@@ -60,24 +60,24 @@ void release(lock){
 
 ---
 硬件支持（一）：一些原子的指令（如：test-and-set指令）
-      ```
-      bool test_and_set (bool *flag) {
-            bool old = *flag;
-            *flag = TRUE;
-            return old;
-      }
-      ```
+```
+bool test_and_set (bool *flag) {
+    bool old = *flag;
+    *flag = TRUE;
+    return old;
+}
+```
 - test-and-set的语义：
 >①记录旧值 ②将值设置为TRUE ③返回旧值
 - 这是由硬件自动实现的
 - Swap/SCHG指令
-      ```
-      void Swap (char* x,* y) { // All done atomically
-            char temp = *x;
-            *x = *y;
-            *y = temp
-      }
-      ```
+    ```
+    void Swap (char* x,* y) { // All done atomically
+        char temp = *x;
+        *x = *y;
+        *y = temp
+    }
+    ```
 - 使用Swap实现test-and-set
      ```
       bool test_and_set (bool *flag) {
@@ -88,7 +88,7 @@ void release(lock){
      ```
 ---
 
-开关中断
+硬件支持（二）：开关中断
   - 对应代码：
     ```
     structlock { };
@@ -101,6 +101,8 @@ void release(lock){
     ```
   - 开关中断在实际系统中是不具有可行性的。因为在实际系统中，只有kernel才有资格开关中断，而且随意开关中断也会导致很多严重的后果。所以只有在很高要求的同步才会使用中断。
   - 在有多处理器时，关中断也是不足够的
+
+---
 
 ---
 **根据上述实现的自旋锁**
