@@ -6,3 +6,4 @@
  - [锁](Synchronization/Lock.md)
  - [信号量](Synchronization/sema.md)
  - [管程](Synchronization/monitor.md)
+ - [消息](Synchronization/message.md)
