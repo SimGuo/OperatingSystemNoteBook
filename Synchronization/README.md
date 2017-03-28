@@ -75,8 +75,7 @@
 * [锁](Lock.md)
 * [信号量](sema.md)
 * [管程](monitor.md)
-* Messages
-
+* [消息](message.md)
 
 
 
