@@ -86,15 +86,15 @@
 ---
 **系统调用的函数**
  - 与进程控制有关的：
-  - create process, allocate memory
+   - create process, allocate memory
  - 文件管理
-  - create, read, delete file
+   - create, read, delete file
  - 设备管理
-  - open device, read/write device, mount device
+   - open device, read/write device, mount device
  - 信息维护
-  - get time, get system data/parameters
+   - get time, get system data/parameters
  - 交互
-  - create/delete channel, send/receive message
+   - create/delete channel, send/receive message
 
 
 ---
